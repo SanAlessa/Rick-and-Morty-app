@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { useCharacterStore } from '../store/characterStore';
+import { Character } from '@/types/character';
 
 export function CharacterCard({
   character,
   selector,
 }: {
-  character: any;
+  character: Character;
   selector: 1 | 2;
 }) {
   const { setCharacter1, setCharacter2, character1, character2 } =

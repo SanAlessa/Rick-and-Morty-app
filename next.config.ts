@@ -1,8 +1,13 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-    images: {
+  images: {
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'media1.giphy.com',
+        pathname: '/**',
+      },
       {
         protocol: 'https',
         hostname: 'rickandmortyapi.com',

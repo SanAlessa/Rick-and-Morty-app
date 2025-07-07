@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { api } from '../lib/api';
+import { CharacterApiResponse } from '@/types/character';
 
 export function useCharacters(page = 1) {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<CharacterApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
