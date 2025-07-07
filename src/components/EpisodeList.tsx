@@ -1,6 +1,7 @@
 import { useCharacterStore } from '../store/characterStore';
 import { useEffect, useState } from 'react';
 import { Loader } from './Loader';
+import { EpisodeState } from '@/types/episode';
 
 function getEpisodeId(url: string) {
   return url.split('/').pop();
@@ -10,7 +11,7 @@ export function EpisodeList() {
   const { character1, character2 } = useCharacterStore();
   const [loading, setLoading] = useState(false);
 
-  const [episodes, setEpisodes] = useState<any>({
+  const [episodes, setEpisodes] = useState<EpisodeState>({
     only1: [],
     shared: [],
     only2: [],
@@ -56,7 +57,7 @@ export function EpisodeList() {
 
   return (
     <div className="grid grid-cols-3 gap-4 mt-8">
-      {['only1', 'shared', 'only2'].map((key) => (
+      {(['only1', 'shared', 'only2'] as Array<keyof EpisodeState>).map((key) => (
         <div key={key}>
           <h3 className="font-bold mb-2">
             {key === 'only1' && 'Character #1 - Only Episodes'}
@@ -64,7 +65,7 @@ export function EpisodeList() {
             {key === 'only2' && 'Character #2 - Only Episodes'}
           </h3>
           <ul className="text-sm">
-            {episodes[key].map((ep: any) => (
+            {episodes[key].map((ep) => (
               <li key={ep.id}>
                 <strong>{ep.episode}</strong> - {ep.name}{' '}
                 <em className="text-gray-500">({ep.air_date})</em>

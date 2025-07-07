@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { useCharacters } from '../useCharacters';
 import { api } from '@/lib/api';
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
 
 jest.mock('@/lib/api');
 

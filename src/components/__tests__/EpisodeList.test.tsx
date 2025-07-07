@@ -5,8 +5,9 @@ jest.mock('@/store/characterStore', () => ({
   useCharacterStore: jest.fn(),
 }));
 
-const mockUseCharacterStore = require('@/store/characterStore')
-  .useCharacterStore as jest.Mock;
+import { useCharacterStore } from '@/store/characterStore';
+
+const mockUseCharacterStore = useCharacterStore as jest.MockedFunction<typeof useCharacterStore>;
 
 describe('EpisodeList', () => {
   beforeEach(() => {
