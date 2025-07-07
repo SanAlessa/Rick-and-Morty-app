@@ -7,7 +7,7 @@ Explorá episodios de Rick & Morty según los personajes seleccionados. Este pro
 ## 🚀 Deploy
 
 Este proyecto está desplegado en **[Vercel](https://vercel.com/)**:  
-🔗 [https://rick-and-morty-app.vercel.app](https://rick-and-morty-app.vercel.app)
+🔗 [https://rick-and-morty-app.vercel.app](https://rick-and-morty-app-zeta-seven.vercel.app/)
 
 ---
 
